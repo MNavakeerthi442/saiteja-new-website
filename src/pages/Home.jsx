@@ -144,6 +144,100 @@ function Home() {
           <p>We believe the best solutions solve problems.</p>
         </div>
       </section>
+                {/* WHY CHOOSE US SECTION */}
+      <section className="why-choose-us-section" style={{ padding: '80px 20px', backgroundColor: '#f9fafb', borderTop: '1px solid #e5e7eb', borderBottom: '1px solid #e5e7eb' }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 20px' }}>
+          
+          {/* Section Header */}
+          <div style={{ textAlign: 'left', marginBottom: '50px' }}>
+            <div style={{ color: 'var(--primary-color, #ff7a00)', fontSize: '0.85rem', fontWeight: 'bold', letterSpacing: '1px', textTransform: 'uppercase', marginBottom: '8px' }}>
+              Why Choose Us
+            </div>
+            <h2 style={{ fontSize: '2.25rem', fontWeight: 'bold', color: '#111827', margin: '0 0 12px 0' }}>
+              Why Choose Saiteja Infotech?
+            </h2>
+            <p style={{ color: '#6b7280', fontSize: '1.05rem', margin: 0 }}>
+              We deliver reliable technology solutions through innovation, quality, and customer-focused services.
+            </p>
+          </div>
+
+          {/* Core Grid Matrix Layout */}
+          <div style={{ 
+            display: 'grid', 
+            gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', 
+            gap: '30px',
+            width: '100%'
+          }}>
+            {/* 1. Customer-Focused Approach */}
+            <div style={{ backgroundColor: '#ffffff', padding: '30px', borderRadius: '12px', boxShadow: '0 4px 20px rgba(0,0,0,0.02)', border: '1px solid #eaeaea', textAlign: 'left', display: 'flex', flexDirection: 'column', gap: '12px' }}>
+              <div style={{ color: 'var(--primary-color, #ff7a00)', fontSize: '1.75rem', lineHeight: '1' }}>👥</div>
+              <h3 style={{ fontSize: '1.25rem', fontWeight: 'bold', color: '#111827', margin: 0 }}>
+                Customer-Focused Approach
+              </h3>
+              <p style={{ color: '#4b5563', fontSize: '0.95rem', lineHeight: '1.6', margin: 0 }}>
+                We understand your requirements before recommending solutions.
+              </p>
+            </div>
+
+            {/* 2. Customized Solutions */}
+            <div style={{ backgroundColor: '#ffffff', padding: '30px', borderRadius: '12px', boxShadow: '0 4px 20px rgba(0,0,0,0.02)', border: '1px solid #eaeaea', textAlign: 'left', display: 'flex', flexDirection: 'column', gap: '12px' }}>
+              <div style={{ color: 'var(--primary-color, #ff7a00)', fontSize: '1.75rem', lineHeight: '1' }}>⚙️</div>
+              <h3 style={{ fontSize: '1.25rem', fontWeight: 'bold', color: '#111827', margin: 0 }}>
+                Customized Solutions
+              </h3>
+              <p style={{ color: '#4b5563', fontSize: '0.95rem', lineHeight: '1.6', margin: 0 }}>
+                We develop solutions aligned with your business objectives.
+              </p>
+            </div>
+
+            {/* 3. Quality Commitment */}
+            <div style={{ backgroundColor: '#ffffff', padding: '30px', borderRadius: '12px', boxShadow: '0 4px 20px rgba(0,0,0,0.02)', border: '1px solid #eaeaea', textAlign: 'left', display: 'flex', flexDirection: 'column', gap: '12px' }}>
+              <div style={{ color: 'var(--primary-color, #ff7a00)', fontSize: '1.75rem', lineHeight: '1' }}>🏅</div>
+              <h3 style={{ fontSize: '1.25rem', fontWeight: 'bold', color: '#111827', margin: 0 }}>
+                Quality Commitment
+              </h3>
+              <p style={{ color: '#4b5563', fontSize: '0.95rem', lineHeight: '1.6', margin: 0 }}>
+                We emphasize functionality, usability, and reliability.
+              </p>
+            </div>
+
+            {/* 4. Technology Expertise */}
+            <div style={{ backgroundColor: '#ffffff', padding: '30px', borderRadius: '12px', boxShadow: '0 4px 20px rgba(0,0,0,0.02)', border: '1px solid #eaeaea', textAlign: 'left', display: 'flex', flexDirection: 'column', gap: '12px' }}>
+              <div style={{ color: 'var(--primary-color, #ff7a00)', fontSize: '1.75rem', lineHeight: '1' }}>&lt;/&gt;</div>
+              <h3 style={{ fontSize: '1.25rem', fontWeight: 'bold', color: '#111827', margin: 0 }}>
+                Technology Expertise
+              </h3>
+              <p style={{ color: '#4b5563', fontSize: '0.95rem', lineHeight: '1.6', margin: 0 }}>
+                We work with modern technologies and development practices.
+              </p>
+            </div>
+
+            {/* 5. Transparent Communication */}
+            <div style={{ backgroundColor: '#ffffff', padding: '30px', borderRadius: '12px', boxShadow: '0 4px 20px rgba(0,0,0,0.02)', border: '1px solid #eaeaea', textAlign: 'left', display: 'flex', flexDirection: 'column', gap: '12px' }}>
+              <div style={{ color: 'var(--primary-color, #ff7a00)', fontSize: '1.75rem', lineHeight: '1' }}>💬</div>
+              <h3 style={{ fontSize: '1.25rem', fontWeight: 'bold', color: '#111827', margin: 0 }}>
+                Transparent Communication
+              </h3>
+              <p style={{ color: '#4b5563', fontSize: '0.95rem', lineHeight: '1.6', margin: 0 }}>
+                We maintain clear communication throughout the project.
+              </p>
+            </div>
+
+            {/* 6. Continuous Support */}
+            <div style={{ backgroundColor: '#ffffff', padding: '30px', borderRadius: '12px', boxShadow: '0 4px 20px rgba(0,0,0,0.02)', border: '1px solid #eaeaea', textAlign: 'left', display: 'flex', flexDirection: 'column', gap: '12px' }}>
+              <div style={{ color: 'var(--primary-color, #ff7a00)', fontSize: '1.75rem', lineHeight: '1' }}>🎧</div>
+              <h3 style={{ fontSize: '1.25rem', fontWeight: 'bold', color: '#111827', margin: 0 }}>
+                Continuous Support
+              </h3>
+              <p style={{ color: '#4b5563', fontSize: '0.95rem', lineHeight: '1.6', margin: 0 }}>
+                We aim to build long-term relationships through ongoing technical support.
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
 
       {/* TESTIMONIALS */}
       <section className="testimonials-section" style={{ padding: '60px 20px', backgroundColor: '#f9f9f9', textAlign: 'center' }}>
