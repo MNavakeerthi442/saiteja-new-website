@@ -56,9 +56,7 @@ function About() {
       </section>
 
       {/* QUICK FACTS — overlaps hero, mirrors the homepage's featured row */}
-           
-     
-      {/* MISSION, VISION AND VALUES */}
+        
       
       <section className="about-facts-section">
         <div className="about-facts-row">
