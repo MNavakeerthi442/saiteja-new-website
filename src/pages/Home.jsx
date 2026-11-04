@@ -238,67 +238,64 @@ function Home() {
         </div>
       </section>
 
+            {/* WHAT OUR CLIENTS SAY SECTION */}
+      <section className="client-reviews-section" style={{ padding: '80px 20px', textAlign: 'center', backgroundColor: '#ffffff' }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+          <div style={{ color: '#ff7a00', fontSize: '0.85rem', fontWeight: 'bold', letterSpacing: '1px', textTransform: 'uppercase', marginBottom: '8px' }}>
+            WHAT OUR CLIENTS SAY
+          </div>
+          <h2 style={{ fontSize: '2.25rem', fontWeight: 'bold', color: '#111827', marginBottom: '20px' }}>
+            Trusted by innovative companies worldwide.
+          </h2>
 
-      {/* TESTIMONIALS */}
-      <section className="testimonials-section" style={{ padding: '60px 20px', backgroundColor: '#f9f9f9', textAlign: 'center' }}>
-        <div className="section-label">WHAT OUR CLIENTS SAY</div>
-        <h2 style={{ fontSize: '2.2rem', marginTop: '10px', marginBottom: '40px' }}>Trusted by innovative <span>companies worldwide.</span></h2>
-        
-        {/* REVIEWS LIST */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '30px', maxWidth: '1200px', margin: 'auto', marginBottom: '50px' }}>
+          {/* Share Your Experience  */}
+          <div style={{ marginBottom: '50px' }}>
+            <Link 
+              to="/contact" 
+              style={{
+                backgroundColor: '#ff7a00',
+                color: '#ffffff',
+                padding: '14px 35px',
+                fontSize: '16px',
+                fontWeight: 'bold',
+                borderRadius: '8px',
+                textDecoration: 'none',
+                display: 'inline-block',
+                boxShadow: '0 4px 15px rgba(255, 122, 0, 0.3)',
+                transition: 'transform 0.2s ease, background-color 0.2s ease'
+              }}
+              onMouseOver={(e) => e.currentTarget.style.backgroundColor = '#e66d00'}
+              onMouseOut={(e) => e.currentTarget.style.backgroundColor = '#ff7a00'}
+            >
+              Share Your Experience <ArrowRight size={16} style={{ display: 'inline', marginLeft: '8px', verticalAlign: 'middle' }} />
+            </Link>
+          </div>
+
+          
           {reviews.length === 0 ? (
-            <p style={{ gridColumn: '1/-1', color: '#666', fontStyle: 'italic', fontSize: '1.1rem', padding: '20px' }}>
-              No reviews yet. Be the first to submit one below!
+            <p style={{ color: '#6b7280', fontStyle: 'italic', fontSize: '1.1rem' }}>
+              Click the button above to share your experience with us!"
             </p>
           ) : (
-            reviews.map((item, index) => (
-              <div key={index} style={{ background: '#fff', padding: '30px', borderRadius: '12px', boxShadow: '0 4px 20px rgba(0,0,0,0.05)', textAlign: 'left', borderTop: '4px solid #007bff' }}>
-                <p style={{ fontStyle: 'italic', color: '#555', lineHeight: '1.6' }}>"{item.review}"</p>
-                <h4 style={{ marginTop: '20px', marginBottom: '2px', color: '#333', fontWeight: '700' }}>{item.name}</h4>
-                <small style={{ color: '#888' }}>{item.designation}</small>
+            <div>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '25px', marginTop: '30px' }}>
+                {reviews.map((rev, index) => (
+                  <div key={index} style={{ backgroundColor: '#f9fafb', padding: '30px', borderRadius: '12px', border: '1px solid #e5e7eb', textAlign: 'left', boxShadow: '0 2px 10px rgba(0,0,0,0.01)' }}>
+                    <p style={{ color: '#4b5563', fontSize: '1rem', fontStyle: 'italic', marginBottom: '15px', lineHeight: '1.6' }}>"{rev.review}"</p>
+                    <h4 style={{ fontSize: '1.1rem', fontWeight: 'bold', color: '#111827', margin: '0 0 4px 0' }}>{rev.name}</h4>
+                    <p style={{ color: '#ff7a00', fontSize: '0.85rem', fontWeight: '600', margin: 0 }}>{rev.designation}</p>
+                  </div>
+                ))}
               </div>
-            ))
-          )}
-        </div>
-
-        {/* REVIEW FORM */}
-        <div style={{ maxWidth: '600px', margin: 'auto', background: '#fff', padding: '40px', borderRadius: '12px', boxShadow: '0 4px 25px rgba(0,0,0,0.08)', textAlign: 'left' }}>
-          <h3 style={{ marginBottom: '5px', color: '#333' }}>Submit Your Review</h3>
-          <p style={{ color: '#666', marginBottom: '25px', fontSize: '0.9rem' }}>Are you a client? Share your experience with Saiteja Infotech instantly.</p>
-          
-          <form onSubmit={handleSubmitReview}>
-            <div style={{ marginBottom: '15px' }}>
-              <label style={{ display: 'block', marginBottom: '5px', fontWeight: '600', color: '#444' }}>Your Name *</label>
-              <input type="text" value={clientName} onChange={(e) => setClientName(e.target.value)} placeholder="e.g., John" style={{ width: '100%', padding: '10px', borderRadius: '6px', border: '1px solid #ddd' }} />
+              <button onClick={handleClearAllReviews} style={{ marginTop: '30px', backgroundColor: 'transparent', color: '#ef4444', border: '1px solid #ef4444', padding: '8px 16px', borderRadius: '6px', cursor: 'pointer', fontSize: '0.85rem' }}>
+                Clear All Reviews
+              </button>
             </div>
-            
-            <div style={{ marginBottom: '15px' }}>
-              <label style={{ display: 'block', marginBottom: '5px', fontWeight: '600', color: '#444' }}>Designation / Company</label>
-              <input type="text" value={clientDesignation} onChange={(e) => setClientDesignation(e.target.value)} placeholder="e.g.,  Saiteja Client" style={{ width: '100%', padding: '10px', borderRadius: '6px', border: '1px solid #ddd' }} />
-            </div>
-
-            <div style={{ marginBottom: '20px' }}>
-              <label style={{ display: 'block', marginBottom: '5px', fontWeight: '600', color: '#444' }}>Your Review *</label>
-              <textarea rows="4" value={clientReview} onChange={(e) => setClientReview(e.target.value)} placeholder="Type your review here..." style={{ width: '100%', padding: '10px', borderRadius: '6px', border: '1px solid #ddd', resize: 'vertical' }}></textarea>
-            </div>
-
-            <button type="submit" style={{ width: '100%', padding: '12px', backgroundColor: '#ff6f00', color: '#fff', border: 'none', borderRadius: '6px', fontWeight: 'bold', cursor: 'pointer', fontSize: '1rem' }}>
-              Submit Live Review →
-            </button>
-          </form>
-
-          {/* CLEAR ALL BUTTON */}
-          {reviews.length > 0 && (
-            <button 
-              onClick={handleClearAllReviews}
-              style={{ width: '100%', marginTop: '12px', padding: '10px', backgroundColor: '#dc3545', color: '#fff', border: 'none', borderRadius: '6px', fontWeight: 'bold', cursor: 'pointer', fontSize: '0.9rem' }}
-            >
-              Clear All Test Reviews 🗑️
-            </button>
           )}
         </div>
       </section>
 
+    
         {/* CAREERS */}
       <section className="careers-section" id="careers">
         <div className="careers-grid">
