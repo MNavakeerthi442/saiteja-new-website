@@ -4390,12 +4390,15 @@ h4 {
 /* Restore original Services heading color */
 
 .services-hero h1 {
-  color: #111827;
+  color: #ffffff;
 }
 
 .services-hero h1 span {
-  color: #405FE8;
   display: block;
+  background: linear-gradient(100deg, #C2410C, #D9720C);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 /* =====================================================
    SERVICES - CLEAR HIGHLIGHTS + DETAIL PAGE IMAGE

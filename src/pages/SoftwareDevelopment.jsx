@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { ArrowLeft, CheckCircle2 } from "lucide-react";
 
 import Button from "../components/Button";
-import softwareImage from "../assets/services/it-solutions.png";
+import softwareImage from "../assets/services/it-solutions.jpg";
 
 const offerings = [
   {
