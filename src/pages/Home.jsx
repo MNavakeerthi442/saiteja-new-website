@@ -238,66 +238,216 @@ function Home() {
         </div>
       </section>
 
-
-      {/* TESTIMONIALS */}
-      <section className="testimonials-section" style={{ padding: '60px 20px', backgroundColor: '#f9f9f9', textAlign: 'center' }}>
-        <div className="section-label">WHAT OUR CLIENTS SAY</div>
-        <h2 style={{ fontSize: '2.2rem', marginTop: '10px', marginBottom: '40px' }}>Trusted by innovative <span>companies worldwide.</span></h2>
-        
-        {/* REVIEWS LIST */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '30px', maxWidth: '1200px', margin: 'auto', marginBottom: '50px' }}>
-          {reviews.length === 0 ? (
-            <p style={{ gridColumn: '1/-1', color: '#666', fontStyle: 'italic', fontSize: '1.1rem', padding: '20px' }}>
-              No reviews yet. Be the first to submit one below!
-            </p>
-          ) : (
-            reviews.map((item, index) => (
-              <div key={index} style={{ background: '#fff', padding: '30px', borderRadius: '12px', boxShadow: '0 4px 20px rgba(0,0,0,0.05)', textAlign: 'left', borderTop: '4px solid #007bff' }}>
-                <p style={{ fontStyle: 'italic', color: '#555', lineHeight: '1.6' }}>"{item.review}"</p>
-                <h4 style={{ marginTop: '20px', marginBottom: '2px', color: '#333', fontWeight: '700' }}>{item.name}</h4>
-                <small style={{ color: '#888' }}>{item.designation}</small>
-              </div>
-            ))
-          )}
-        </div>
-
-        {/* REVIEW FORM */}
-        <div style={{ maxWidth: '600px', margin: 'auto', background: '#fff', padding: '40px', borderRadius: '12px', boxShadow: '0 4px 25px rgba(0,0,0,0.08)', textAlign: 'left' }}>
-          <h3 style={{ marginBottom: '5px', color: '#333' }}>Submit Your Review</h3>
-          <p style={{ color: '#666', marginBottom: '25px', fontSize: '0.9rem' }}>Are you a client? Share your experience with Saiteja Infotech instantly.</p>
-          
-          <form onSubmit={handleSubmitReview}>
-            <div style={{ marginBottom: '15px' }}>
-              <label style={{ display: 'block', marginBottom: '5px', fontWeight: '600', color: '#444' }}>Your Name *</label>
-              <input type="text" value={clientName} onChange={(e) => setClientName(e.target.value)} placeholder="e.g., John" style={{ width: '100%', padding: '10px', borderRadius: '6px', border: '1px solid #ddd' }} />
-            </div>
             
-            <div style={{ marginBottom: '15px' }}>
-              <label style={{ display: 'block', marginBottom: '5px', fontWeight: '600', color: '#444' }}>Designation / Company</label>
-              <input type="text" value={clientDesignation} onChange={(e) => setClientDesignation(e.target.value)} placeholder="e.g.,  Saiteja Client" style={{ width: '100%', padding: '10px', borderRadius: '6px', border: '1px solid #ddd' }} />
+    
+      {/* WHAT OUR CLIENTS SAY SECTION */}
+      <section
+        className="client-reviews-section"
+        style={{
+          padding: '90px 20px',
+          backgroundColor: '#ffffff'
+        }}
+      >
+        <div
+          style={{
+            maxWidth: '1250px',
+            margin: '0 auto',
+            display: 'flex',
+            flexWrap: 'wrap',
+            alignItems: 'center',
+            gap: '30px'
+          }}
+        >
+
+          {/* LEFT SIDE CONTENT */}
+          <div style={{
+            flex: '1 1 300px',
+            textAlign: 'left'
+          }}>
+
+            <div style={{
+              color: '#ff7a00',
+              fontSize: '0.95rem',
+              fontWeight: 'bold',
+              letterSpacing: '1px',
+              marginBottom: '18px'
+            }}>
+              WHAT OUR CLIENTS SAY
             </div>
 
-            <div style={{ marginBottom: '20px' }}>
-              <label style={{ display: 'block', marginBottom: '5px', fontWeight: '600', color: '#444' }}>Your Review *</label>
-              <textarea rows="4" value={clientReview} onChange={(e) => setClientReview(e.target.value)} placeholder="Type your review here..." style={{ width: '100%', padding: '10px', borderRadius: '6px', border: '1px solid #ddd', resize: 'vertical' }}></textarea>
-            </div>
+            <h2 style={{
+              fontSize: '2.7rem',
+              fontWeight: 'bold',
+              lineHeight: '1.2',
+              color: '#111827',
+              marginBottom: '20px'
+            }}>
+              Trusted by innovative companies worldwide.
+            </h2>
 
-            <button type="submit" style={{ width: '100%', padding: '12px', backgroundColor: '#ff6f00', color: '#fff', border: 'none', borderRadius: '6px', fontWeight: 'bold', cursor: 'pointer', fontSize: '1rem' }}>
-              Submit Live Review →
-            </button>
-          </form>
+            <p style={{
+              color: '#64748b',
+              fontSize: '1.1rem',
+              lineHeight: '1.6',
+              marginBottom: '30px'
+            }}>
+              Your Experience inspires us to deliver better
+              technology solutions and create lasting partnerships.
+            </p>
 
-          {/* CLEAR ALL BUTTON */}
-          {reviews.length > 0 && (
-            <button 
-              onClick={handleClearAllReviews}
-              style={{ width: '100%', marginTop: '12px', padding: '10px', backgroundColor: '#dc3545', color: '#fff', border: 'none', borderRadius: '6px', fontWeight: 'bold', cursor: 'pointer', fontSize: '0.9rem' }}
+            <Link
+              to="/contact"
+              style={{
+                backgroundColor: '#ff7a00',
+                color: '#ffffff',
+                padding: '17px 30px',
+                fontSize: '16px',
+                fontWeight: 'bold',
+                borderRadius: '10px',
+                textDecoration: 'none',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '10px',
+                boxShadow: '0 5px 18px rgba(255,122,0,0.25)',
+                transition: '0.3s ease'
+              }}
+              onMouseOver={(e) =>
+                e.currentTarget.style.backgroundColor = '#e66d00'
+              }
+              onMouseOut={(e) =>
+                e.currentTarget.style.backgroundColor = '#ff7a00'
+              }
             >
-              Clear All Test Reviews 🗑️
-            </button>
-          )}
+              Share Your Experience
+              <ArrowRight size={18} />
+            </Link>
+
+          </div>
+
+          {/* RIGHT SIDE - CLIENT REVIEW CARDS */}
+          <div style={{
+            flex: '2 1 550px',
+            minWidth: 0
+          }}>
+
+            {reviews.length === 0 ? (
+
+              <div style={{
+                padding: '50px 25px',
+                textAlign: 'center',
+                backgroundColor: '#f9fafb',
+                border: '1px solid #e5e7eb',
+                borderRadius: '18px'
+              }}>
+                <div style={{
+                  fontSize: '3rem',
+                  color: '#ff7a00',
+                  marginBottom: '15px'
+                }}>
+                
+                </div>
+
+                <h3 style={{
+                  color: '#111827',
+                  fontSize: '1.3rem',
+                  marginBottom: '10px'
+                }}>
+                  Your Experience Matters!
+                </h3>
+
+                <p style={{
+                  color: '#64748b',
+                  margin: 0
+                }}>
+                 Share your experience and help us improve.
+                </p>
+              </div>
+
+            ) : (
+
+              <div style={{
+  display: 'grid',
+  gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+  gap: '12px',
+  alignItems: 'start'
+}}>
+
+                {reviews.map((rev, index) => (
+
+                  <div
+                    key={index}
+                    style={{
+                      backgroundColor: '#ffffff',
+                      padding: '22px',
+                      borderRadius: '18px',
+                      border: '1px solid #e5e7eb',
+                      borderBottom: '4px solid #ff7a00',
+                      boxShadow: '0 8px 30px rgba(0,0,0,0.06)',
+                      transition: 'transform 0.3s ease, box-shadow 0.3s ease'
+                    }}
+                    onMouseOver={(e) => {
+                      e.currentTarget.style.transform = 'translateY(-6px)';
+                      e.currentTarget.style.boxShadow =
+                        '0 14px 35px rgba(0,0,0,0.10)';
+                    }}
+                    onMouseOut={(e) => {
+                      e.currentTarget.style.transform = 'translateY(0)';
+                      e.currentTarget.style.boxShadow =
+                        '0 8px 30px rgba(0,0,0,0.06)';
+                    }}
+                  >
+
+                   
+
+                    {/* REVIEW TEXT */}
+                    <p style={{
+                      color: '#334155',
+                      fontSize: '1rem',
+                      lineHeight: '1.7',
+                      marginBottom: '20px',
+                      overflowWrap: 'anywhere'
+                    }}>
+                      {rev.review}
+                    </p>
+
+                    {/* CLIENT NAME */}
+                    <div style={{
+                      borderTop: '1px solid #f1f5f9',
+                      paddingTop: '18px'
+                    }}>
+                      <h4 style={{
+                        color: '#111827',
+                        fontSize: '1.15rem',
+                        fontWeight: 'bold',
+                        margin: 0
+                      }}>
+                        {rev.name}
+                      </h4>
+
+                      <p style={{
+                        color: '#ff7a00',
+                        fontSize: '0.85rem',
+                        marginTop: '6px',
+                        fontWeight: '600'
+                      }}>
+                         {rev.designation || "Client Partner"}
+                      </p>
+                    </div>
+
+                  </div>
+
+                ))}
+
+              </div>
+            )}
+
+
+     
+          </div>
+
         </div>
       </section>
+
 
         {/* CAREERS */}
       <section className="careers-section" id="careers">
