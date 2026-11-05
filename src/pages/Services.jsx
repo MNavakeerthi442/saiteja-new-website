@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 import Button from "../components/Button";
 import SectionHeading from "../components/SectionHeading";
 
-import softwareImage from "../assets/services/it-solutions.png";
-import itImage from "../assets/services/ai-data-solutions.png";
+import softwareImage from "../assets/services/it-solutions.jpg";
+import itImage from "../assets/services/ai-data-solutions.jpg";
 import cloudImage from "../assets/services/hr-staffing.png";
 
 const services = [
@@ -133,7 +133,6 @@ function Services() {
               </article>
             )
           )}
-
         </div>
       </section>
 

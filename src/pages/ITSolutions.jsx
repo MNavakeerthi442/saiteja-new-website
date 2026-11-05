@@ -1,8 +1,7 @@
-import { Link } from "react-router-dom";
-import { ArrowLeft, CheckCircle2 } from "lucide-react";
+import { CheckCircle2 } from "lucide-react";
 
 import Button from "../components/Button";
-import itImage from "../assets/services/ai-data-solutions.png";
+import itImage from "../assets/services/ai-data-solutions.jpg";
 
 const offerings = [
   {
@@ -74,7 +73,6 @@ export default function ITSolutions() {
             approaches.
           </p>
         </div>
-
       </section>
 
       <section className="service-detail-information">

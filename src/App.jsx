@@ -15,6 +15,7 @@ import SoftwareDevelopment from "./pages/SoftwareDevelopment";
 import ITSolutions from "./pages/ITSolutions";
 import CloudDevOpsHRMS from "./pages/CloudDevOpsHRMS";
 import Terms from "./pages/Terms";
+import AdminJobs from "./pages/AdminJobs";
 
 function App() {
   return (
@@ -48,6 +49,8 @@ function App() {
           <Route path="/quotation" element={<Quotation />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms" element={<Terms />} />
+          
+          <Route path="/admin/jobs" element={<AdminJobs />} />
         </Route>
       </Routes>
     </BrowserRouter>

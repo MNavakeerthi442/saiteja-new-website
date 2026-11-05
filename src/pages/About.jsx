@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 import Button from "../components/Button";
 import SectionHeading from "../components/SectionHeading";
-import companyLogo from "../assets/logo.png";
+import profileImage from "../assets/services/hr-staffing.jpg";
 
 const milestones = [
   {
@@ -53,99 +53,98 @@ function About() {
             create new opportunities.
           </p>
         </div>
+      </section>
 
-        <div className="about-hero-orbit" aria-hidden="true">
-          <div className="about-orbit about-orbit-one" />
-          <div className="about-orbit about-orbit-two" />
+      {/* QUICK FACTS — overlaps hero, mirrors the homepage's featured row */}
+        
+      
+      <section className="about-facts-section">
+        <div className="about-facts-row">
 
-          <div className="about-orbit-core">
-            <img
-              src={companyLogo}
-              alt=""
-              className="about-company-logo"
-            />
+          <div className="about-fact">
+            <Target size={22} />
+            <h3>Our Mission</h3>
+            <p>
+              To empower businesses through technology, provide practical IT
+              solutions, develop talent, and create meaningful digital
+              experiences.
+            </p>
           </div>
 
-          <div className="about-floating-card">
-            <Award size={18} />
+          <div className="about-fact">
+            <Eye size={22} />
+            <h3>Our Vision</h3>
+            <p>
+              To become a trusted technology partner for businesses by
+              delivering innovative, reliable, and scalable digital solutions.
+            </p>
+          </div>
 
-            <span>
-              Technology
-              <br />
-              with purpose
-            </span>
+          <div className="about-fact">
+            <Award size={22} />
+            <h3>Our Values</h3>
+     <ul
+  style={{
+    color: "",
+    listStyleType: "disc",
+    paddingLeft: "20px",
+    fontSize: "inherit",
+    lineHeight: "inherit",
+  }}
+>
+  <li>Innovation and continuous learning</li>
+  <li>Customer satisfaction</li>
+  <li>Quality and reliability</li>
+  <li>Transparency and integrity</li>
+  <li>Teamwork and collaboration</li>
+</ul>
           </div>
         </div>
       </section>
 
       {/* COMPANY PROFILE */}
+           
       <section className="about-profile">
-        <div className="section-label">WHO WE ARE</div>
+        <div className="section-label">ABOUT SAITEJA INFOTECH</div>
 
         <div className="about-profile-grid">
-          <h2>
-            More than a service provider.
-            <span> A partner for progress.</span>
-          </h2>
+          <h2>About Saiteja Infotech</h2>
 
           <div className="about-profile-copy">
             <p>
-              We work at the intersection of people, technology and business.
-              Our approach is centered around understanding real challenges and
-              creating solutions that are practical, scalable and useful.
+              Saiteja Infotech Private Limited is committed to helping
+              businesses and individuals leverage technology to achieve
+              their goals.
             </p>
 
             <p>
-              From connecting organizations with talent to enabling digital
-              transformation, we aim to make every engagement meaningful and
-              outcome-driven.
+              Based in Tirupati, Andhra Pradesh, we focus on developing
+              innovative IT solutions, delivering technology services,
+              and supporting digital transformation.
+            </p>
+
+            <p>
+              Our team works across software development, web technologies,
+              business applications, and emerging technology solutions.
+            </p>
+
+            <p>
+              We believe in building long-term relationships through quality
+              work, transparent communication, continuous improvement, and
+              customer satisfaction.
             </p>
           </div>
         </div>
+
+        <figure className="section-photo">
+          <img
+            src={profileImage}
+            alt="People and technology at Saiteja Infotech"
+            loading="lazy"
+          />
+        </figure>
       </section>
-
-      {/* MISSION / VISION */}
-      <section className="mission-vision-section">
-        <SectionHeading
-          label="WHAT DRIVES US"
-          title="Purpose behind"
-          highlight=" every solution."
-          description="Our mission and vision guide how we build relationships, develop capabilities and approach every challenge."
-        />
-
-        <div className="mission-vision-grid">
-          <article className="purpose-card purpose-card-dark">
-            <div className="purpose-icon">
-              <Target size={25} />
-            </div>
-
-            <span className="purpose-number">01</span>
-
-            <h3>Our Mission</h3>
-
-            <p>
-              To deliver practical technology, talent and business solutions
-              that create measurable value for organizations and meaningful
-              opportunities for people.
-            </p>
-          </article>
-
-          <article className="purpose-card">
-            <div className="purpose-icon">
-              <Eye size={25} />
-            </div>
-
-            <span className="purpose-number">02</span>
-
-            <h3>Our Vision</h3>
-
-            <p>
-              To become a trusted partner for organizations seeking to grow
-              through technology, people and continuous innovation.
-            </p>
-          </article>
-        </div>
-      </section>
+          
 
       {/* LEADERSHIP */}
       <section className="leadership-section">
