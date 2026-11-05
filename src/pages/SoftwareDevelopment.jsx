@@ -40,9 +40,6 @@ export default function SoftwareDevelopment() {
 
       <section className="service-detail-hero">
 
-        <div className="section-label">
-          OUR SERVICES / SOFTWARE DEVELOPMENT
-        </div>
 
         <h1>Software Development</h1>
 
