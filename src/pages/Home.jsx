@@ -238,64 +238,217 @@ function Home() {
         </div>
       </section>
 
-            {/* WHAT OUR CLIENTS SAY SECTION */}
-      <section className="client-reviews-section" style={{ padding: '80px 20px', textAlign: 'center', backgroundColor: '#ffffff' }}>
-        <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-          <div style={{ color: '#ff7a00', fontSize: '0.85rem', fontWeight: 'bold', letterSpacing: '1px', textTransform: 'uppercase', marginBottom: '8px' }}>
-            WHAT OUR CLIENTS SAY
-          </div>
-          <h2 style={{ fontSize: '2.25rem', fontWeight: 'bold', color: '#111827', marginBottom: '20px' }}>
-            Trusted by innovative companies worldwide.
-          </h2>
+            
+    
+      {/* WHAT OUR CLIENTS SAY SECTION */}
+      <section
+        className="client-reviews-section"
+        style={{
+          padding: '90px 20px',
+          backgroundColor: '#ffffff'
+        }}
+      >
+        <div
+          style={{
+            maxWidth: '1250px',
+            margin: '0 auto',
+            display: 'flex',
+            flexWrap: 'wrap',
+            alignItems: 'center',
+            gap: '30px'
+          }}
+        >
 
-          {/* Share Your Experience  */}
-          <div style={{ marginBottom: '50px' }}>
-            <Link 
-              to="/contact" 
+          {/* LEFT SIDE CONTENT */}
+          <div style={{
+            flex: '1 1 300px',
+            textAlign: 'left'
+          }}>
+
+            <div style={{
+              color: '#ff7a00',
+              fontSize: '0.95rem',
+              fontWeight: 'bold',
+              letterSpacing: '1px',
+              marginBottom: '18px'
+            }}>
+              WHAT OUR CLIENTS SAY
+            </div>
+
+            <h2 style={{
+              fontSize: '2.7rem',
+              fontWeight: 'bold',
+              lineHeight: '1.2',
+              color: '#111827',
+              marginBottom: '20px'
+            }}>
+              Trusted by innovative companies worldwide.
+            </h2>
+
+            <p style={{
+              color: '#64748b',
+              fontSize: '1.1rem',
+              lineHeight: '1.6',
+              marginBottom: '30px'
+            }}>
+              Your Experience inspires us to deliver better
+              technology solutions and create lasting partnerships.
+            </p>
+
+            <Link
+              to="/contact"
               style={{
                 backgroundColor: '#ff7a00',
                 color: '#ffffff',
-                padding: '14px 35px',
+                padding: '17px 30px',
                 fontSize: '16px',
                 fontWeight: 'bold',
-                borderRadius: '8px',
+                borderRadius: '10px',
                 textDecoration: 'none',
-                display: 'inline-block',
-                boxShadow: '0 4px 15px rgba(255, 122, 0, 0.3)',
-                transition: 'transform 0.2s ease, background-color 0.2s ease'
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '10px',
+                boxShadow: '0 5px 18px rgba(255,122,0,0.25)',
+                transition: '0.3s ease'
               }}
-              onMouseOver={(e) => e.currentTarget.style.backgroundColor = '#e66d00'}
-              onMouseOut={(e) => e.currentTarget.style.backgroundColor = '#ff7a00'}
+              onMouseOver={(e) =>
+                e.currentTarget.style.backgroundColor = '#e66d00'
+              }
+              onMouseOut={(e) =>
+                e.currentTarget.style.backgroundColor = '#ff7a00'
+              }
             >
-              Share Your Experience <ArrowRight size={16} style={{ display: 'inline', marginLeft: '8px', verticalAlign: 'middle' }} />
+              Share Your Experience
+              <ArrowRight size={18} />
             </Link>
+
           </div>
 
-          
-          {reviews.length === 0 ? (
-            <p style={{ color: '#6b7280', fontStyle: 'italic', fontSize: '1.1rem' }}>
-              Click the button above to share your experience with us!"
-            </p>
-          ) : (
-            <div>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '25px', marginTop: '30px' }}>
-                {reviews.map((rev, index) => (
-                  <div key={index} style={{ backgroundColor: '#f9fafb', padding: '30px', borderRadius: '12px', border: '1px solid #e5e7eb', textAlign: 'left', boxShadow: '0 2px 10px rgba(0,0,0,0.01)' }}>
-                    <p style={{ color: '#4b5563', fontSize: '1rem', fontStyle: 'italic', marginBottom: '15px', lineHeight: '1.6' }}>"{rev.review}"</p>
-                    <h4 style={{ fontSize: '1.1rem', fontWeight: 'bold', color: '#111827', margin: '0 0 4px 0' }}>{rev.name}</h4>
-                    <p style={{ color: '#ff7a00', fontSize: '0.85rem', fontWeight: '600', margin: 0 }}>{rev.designation}</p>
-                  </div>
-                ))}
+          {/* RIGHT SIDE - CLIENT REVIEW CARDS */}
+          <div style={{
+            flex: '2 1 550px',
+            minWidth: 0
+          }}>
+
+            {reviews.length === 0 ? (
+
+              <div style={{
+                padding: '50px 25px',
+                textAlign: 'center',
+                backgroundColor: '#f9fafb',
+                border: '1px solid #e5e7eb',
+                borderRadius: '18px'
+              }}>
+                <div style={{
+                  fontSize: '3rem',
+                  color: '#ff7a00',
+                  marginBottom: '15px'
+                }}>
+                
+                </div>
+
+                <h3 style={{
+                  color: '#111827',
+                  fontSize: '1.3rem',
+                  marginBottom: '10px'
+                }}>
+                  Your Experience Matters!
+                </h3>
+
+                <p style={{
+                  color: '#64748b',
+                  margin: 0
+                }}>
+                 Share your experience and help us improve.
+                </p>
               </div>
-              <button onClick={handleClearAllReviews} style={{ marginTop: '30px', backgroundColor: 'transparent', color: '#ef4444', border: '1px solid #ef4444', padding: '8px 16px', borderRadius: '6px', cursor: 'pointer', fontSize: '0.85rem' }}>
-                Clear All Reviews
-              </button>
-            </div>
-          )}
+
+            ) : (
+
+              <div style={{
+  display: 'grid',
+  gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+  gap: '12px',
+  alignItems: 'start'
+}}>
+
+                {reviews.map((rev, index) => (
+
+                  <div
+                    key={index}
+                    style={{
+                      backgroundColor: '#ffffff',
+                      padding: '22px',
+                      borderRadius: '18px',
+                      border: '1px solid #e5e7eb',
+                      borderBottom: '4px solid #ff7a00',
+                      boxShadow: '0 8px 30px rgba(0,0,0,0.06)',
+                      transition: 'transform 0.3s ease, box-shadow 0.3s ease'
+                    }}
+                    onMouseOver={(e) => {
+                      e.currentTarget.style.transform = 'translateY(-6px)';
+                      e.currentTarget.style.boxShadow =
+                        '0 14px 35px rgba(0,0,0,0.10)';
+                    }}
+                    onMouseOut={(e) => {
+                      e.currentTarget.style.transform = 'translateY(0)';
+                      e.currentTarget.style.boxShadow =
+                        '0 8px 30px rgba(0,0,0,0.06)';
+                    }}
+                  >
+
+                   
+
+                    {/* REVIEW TEXT */}
+                    <p style={{
+                      color: '#334155',
+                      fontSize: '1rem',
+                      lineHeight: '1.7',
+                      marginBottom: '20px',
+                      overflowWrap: 'anywhere'
+                    }}>
+                      {rev.review}
+                    </p>
+
+                    {/* CLIENT NAME */}
+                    <div style={{
+                      borderTop: '1px solid #f1f5f9',
+                      paddingTop: '18px'
+                    }}>
+                      <h4 style={{
+                        color: '#111827',
+                        fontSize: '1.15rem',
+                        fontWeight: 'bold',
+                        margin: 0
+                      }}>
+                        {rev.name}
+                      </h4>
+
+                      <p style={{
+                        color: '#ff7a00',
+                        fontSize: '0.85rem',
+                        marginTop: '6px',
+                        fontWeight: '600'
+                      }}>
+                         {rev.designation || "Client Partner"}
+                      </p>
+                    </div>
+
+                  </div>
+
+                ))}
+
+              </div>
+            )}
+
+
+     
+          </div>
+
         </div>
       </section>
 
-    
+
         {/* CAREERS */}
       <section className="careers-section" id="careers">
         <div className="careers-grid">
