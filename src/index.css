@@ -3943,6 +3943,463 @@ h4 {
   overflow-wrap: anywhere;
 }
 
+/* ==========================================
+   SERVICES - THREE CLICKABLE SERVICE CARDS
+========================================== */
+
+.services-category-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: start;
+  gap: 24px;
+}
+
+.service-category-card {
+  min-width: 0;
+  height: auto;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  border-radius: 16px;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.service-category-card:hover {
+  transform: translateY(-5px);
+}
+
+.service-category-card .service-detail-image {
+  width: 100%;
+  height: 230px;
+  flex: 0 0 230px;
+  overflow: hidden;
+  margin: 0;
+}
+
+.service-category-card .service-detail-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.service-category-card:hover .service-detail-image img {
+  transform: scale(1.05);
+}
+
+.service-category-card .service-detail-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 25px;
+}
+
+.service-card-icon {
+  width: 46px;
+  height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--orange);
+  background: rgba(245, 138, 50, 0.12);
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.service-category-card h3 {
+  font-size: 22px;
+  line-height: 1.4;
+  margin: 0 0 12px;
+}
+
+.service-category-card p {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.8;
+  margin: 0;
+}
+
+.service-feature-list,
+.service-benefits-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  list-style: none;
+  padding: 18px 0;
+  margin: 16px 0 0;
+  border-top: 1px dashed var(--border);
+}
+
+.service-feature-list li,
+.service-benefits-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--text);
+}
+
+.service-feature-list li svg,
+.service-benefits-list li svg {
+  flex-shrink: 0;
+  color: var(--orange);
+  margin-top: 2px;
+}
+
+/* VIEW DETAILS BUTTON */
+
+.service-category-link {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-top: 15px;
+  padding: 14px 16px;
+  border: 1px solid var(--orange);
+  border-radius: 8px;
+  background: transparent;
+  color: var(--orange);
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.service-category-link:hover {
+  background: var(--orange);
+  color: white;
+}
+
+/* EXPANDED DETAILS */
+
+.service-expanded-content {
+  padding: 25px;
+  background: #f8f9fc;
+  border-top: 1px solid var(--border);
+  animation: serviceExpand 0.3s ease;
+}
+
+.service-expanded-content h4 {
+  font-size: 17px;
+  margin: 0 0 12px;
+  color: var(--text);
+}
+
+.service-expanded-content p {
+  font-size: 14px;
+  line-height: 1.8;
+  color: var(--muted);
+  margin-bottom: 22px;
+}
+
+.service-expanded-content .service-benefits-list {
+  margin-top: 0;
+  padding-top: 12px;
+}
+
+.service-expanded-content button {
+  margin-top: 12px;
+}
+
+@keyframes serviceExpand {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* TABLET */
+
+@media (max-width: 1000px) {
+  .services-category-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 650px) {
+  .services-category-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service-category-card .service-detail-image {
+    height: 220px;
+    flex-basis: 220px;
+  }
+
+  .service-category-card .service-detail-content {
+    padding: 22px;
+  }
+
+  .service-expanded-content {
+    padding: 22px;
+  }
+
+  .service-category-card h3 {
+    font-size: 20px;
+  }
+}
+
+/* ==========================================
+   SERVICE DETAIL PAGE DESIGN
+========================================== */
+
+.service-detail-page {
+  width: 100%;
+  background: #ffffff;
+  color: var(--text);
+  overflow: hidden;
+}
+
+/* HERO */
+
+.service-detail-hero {
+  padding: 85px 20px 75px;
+  background: #f5f7fb;
+  text-align: center;
+}
+
+.service-detail-hero .section-label {
+  color: var(--orange);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 18px;
+}
+
+.service-detail-hero h1 {
+  font-size: 44px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 18px;
+}
+
+.service-detail-hero p {
+  max-width: 700px;
+  margin: 0 auto 25px;
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+/* INTRODUCTION */
+
+.service-detail-intro {
+  max-width: 1200px;
+  width: calc(100% - 60px);
+  margin: auto;
+  padding: 80px 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 55px;
+  align-items: center;
+}
+
+.service-detail-intro img {
+  width: 100%;
+  height: 370px;
+  object-fit: cover;
+  border-radius: 15px;
+  display: block;
+}
+
+.service-detail-intro h2 {
+  font-size: 32px;
+  line-height: 1.3;
+  margin: 15px 0;
+}
+
+.service-detail-intro p {
+  font-size: 15px;
+  color: var(--muted);
+  line-height: 1.9;
+}
+
+/* OFFERINGS */
+
+.service-detail-information {
+  padding: 80px 30px;
+  background: #f5f7fb;
+}
+
+.service-detail-container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.service-detail-container h2 {
+  font-size: 32px;
+  margin: 15px 0 35px;
+}
+
+.service-detail-sections-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+}
+
+.service-info-card {
+  padding: 30px;
+  background: #ffffff;
+  border: 1px solid #e5e9f1;
+  border-radius: 14px;
+  transition: 0.3s ease;
+}
+
+.service-info-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.07);
+}
+
+.service-info-card > span {
+  color: var(--orange);
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.service-info-card h3 {
+  font-size: 20px;
+  margin: 15px 0;
+}
+
+.service-info-card p {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+/* BENEFITS */
+
+.service-detail-benefits {
+  padding: 80px 30px;
+  background: #ffffff;
+}
+
+.service-benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.service-benefit-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 22px;
+  background: #f7f8fc;
+  border: 1px solid #e5e9f1;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.service-benefit-item svg {
+  color: var(--orange);
+  min-width: 21px;
+}
+
+/* CONTACT CTA */
+
+.service-detail-cta {
+  padding: 75px 20px;
+  background: #121a2c;
+  color: #ffffff;
+  text-align: center;
+}
+
+.service-detail-cta h2 {
+  color: #ffffff;
+  font-size: 32px;
+  margin-bottom: 15px;
+}
+
+.service-detail-cta p {
+  max-width: 650px;
+  margin: 0 auto 25px;
+  color: #c4cada;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+/* BACK TO SERVICES */
+
+.service-back-link {
+  padding: 30px;
+  text-align: center;
+}
+
+.service-back-link a {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--orange);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+  .service-detail-intro {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .service-detail-intro img {
+    height: 320px;
+  }
+}
+
+@media (max-width: 600px) {
+  .service-detail-hero {
+    padding: 60px 20px;
+  }
+
+  .service-detail-hero h1 {
+    font-size: 30px;
+  }
+
+  .service-detail-intro {
+    width: calc(100% - 40px);
+    padding: 50px 0;
+  }
+
+  .service-detail-sections-grid,
+  .service-benefits-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service-detail-information,
+  .service-detail-benefits {
+    padding: 55px 20px;
+  }
+
+  .service-detail-cta h2 {
+    font-size: 25px;
+  }
+}
+
+/* Restore original Services heading color */
+
+.services-hero h1 {
+  color: #ffffff;
+}
+
+.services-hero h1 span {
+  display: block;
+  background: linear-gradient(100deg, #C2410C, #D9720C);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
 /* =====================================================
    SERVICES - CLEAR HIGHLIGHTS + DETAIL PAGE IMAGE
 ===================================================== */

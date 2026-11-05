@@ -3,12 +3,64 @@ import { Link } from "react-router-dom";
 
 import Button from "../components/Button";
 import SectionHeading from "../components/SectionHeading";
-import services from "../data/services";
+
+import softwareImage from "../assets/services/it-solutions.jpg";
+import itImage from "../assets/services/ai-data-solutions.jpg";
+import cloudImage from "../assets/services/hr-staffing.png";
+
+const services = [
+  {
+    image: softwareImage,
+    number: "01",
+    title: "Software Development",
+    description:
+      "We develop customized software solutions and applications designed to address business challenges, improve operational efficiency, and support business growth.",
+    items: [
+      "Custom software development",
+      "Website development",
+      "Mobile application development",
+      "Web application development",
+    ],
+    link: "/services/software-development",
+  },
+
+  {
+    image: itImage,
+    number: "02",
+    title: "IT Solutions",
+    description:
+      "Technology solutions designed to help businesses improve processes, productivity and digital capabilities.",
+    items: [
+      "IT consulting",
+      "Digital transformation",
+      "Technology integration",
+      "Business process automation",
+    ],
+    link: "/services/it-solutions",
+  },
+
+  {
+    image: cloudImage,
+    number: "03",
+    title: "Cloud, DevOps & HRMS Solutions",
+    description:
+      "Modern cloud, DevOps and workforce management solutions that help businesses simplify operations and support growth.",
+    items: [
+      "HRMS solutions",
+      "Employee and workforce management",
+      "Cloud infrastructure solutions",
+      "DevOps and deployment automation",
+    ],
+    link: "/services/cloud-devops-hrms",
+  },
+];
 
 function Services() {
   return (
     <main className="services-page">
+
       {/* HERO */}
+
       <section className="services-hero">
         <div className="section-label">OUR SERVICES</div>
 
@@ -18,14 +70,17 @@ function Services() {
         </h1>
 
         <p>
-          From people and technology to branding and training, we bring
-          complementary capabilities together to help organizations move
+          From software development to IT solutions and
+          workforce management, we bring complementary
+          capabilities together to help organizations move
           forward.
         </p>
       </section>
 
       {/* SERVICES */}
+
       <section className="services-list-section">
+
         <div className="services-intro">
           <SectionHeading
             label="WHAT WE DO"
@@ -35,56 +90,56 @@ function Services() {
         </div>
 
         <div className="services-detail-grid">
-          {services.map(({ image, number, title, description, highlights }) => (
-            <article className="service-detail-card" key={title}>
-              <div className="service-detail-image">
-                <img src={image} alt={title} />
 
-                <span className="service-detail-number">{number}</span>
-              </div>
+          {services.map(
+            ({ image, number, title, description, items, link }) => (
+              <article
+                className="service-detail-card"
+                key={title}
+              >
 
-              <div className="service-detail-content">
-                <h3>{title}</h3>
+                <div className="service-detail-image">
 
-                <p>{description}</p>
+                  <img src={image} alt={title} />
 
-                <ul className="service-highlights">
-                  {highlights.map((item) => (
-                    <li key={item}>
-                      <CheckCircle2 size={16} />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
+                  <span className="service-detail-number">
+                    {number}
+                  </span>
 
-                <Link
-                  to={
-                    title === "HR & Staffing"
-                      ? "/services/hr-staffing"
-                      : title === "IT Solutions"
-                      ? "/services/it-solutions"
-                      : title === "AI & Data Solutions"
-                      ? "/services/ai-data-solutions"
-                      : title === "Branding & Digital"
-                      ? "/services/branding-digital"
-                      : title === "Training & Development"
-                      ? "/services/training-development"
-                      : title === "Recruitment"
-                      ? "/services/recruitment"
-                      : "/contact"
-                  }
-                >
-                  Learn more
-                  <ArrowRight size={16} />
-                </Link>
-              </div>
-            </article>
-          ))}
+                </div>
+
+                <div className="service-detail-content">
+
+                  <h3>{title}</h3>
+
+                  <p>{description}</p>
+
+                  <ul className="service-feature-list">
+                    {items.map((item) => (
+                      <li key={item}>
+                        <CheckCircle2 size={17} />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  <Link to={link}>
+                    Learn more
+                    <ArrowRight size={16} />
+                  </Link>
+
+                </div>
+
+              </article>
+            )
+          )}
         </div>
       </section>
 
       {/* CTA */}
+
       <section className="services-cta">
+
         <div>
           <div className="section-label">NEED A SOLUTION?</div>
 
@@ -94,13 +149,17 @@ function Services() {
           </h2>
 
           <p>
-            Tell us what you're trying to achieve and let's explore the right
-            approach together.
+            Tell us what you're trying to achieve and let's
+            explore the right approach together.
           </p>
         </div>
 
-        <Button to="/contact">Start a Conversation</Button>
+        <Button to="/contact">
+          Start a Conversation
+        </Button>
+
       </section>
+
     </main>
   );
 }
