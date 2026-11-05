@@ -38,9 +38,6 @@ export default function ITSolutions() {
     <main className="service-detail-page">
 
       <section className="service-detail-hero">
-        <div className="section-label">
-          OUR SERVICES / IT SOLUTIONS
-        </div>
 
         <h1>IT Solutions</h1>
 

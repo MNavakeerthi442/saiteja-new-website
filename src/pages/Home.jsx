@@ -82,22 +82,6 @@ function Home() {
         </div>
       </section>
 
-      {/* FEATURED SERVICES ROW */}
-      <section className="featured-row-section">
-        <div className="featured-row">
-          {services.slice(0, 3).map(({ image, title, description }) => (
-            <article className="featured-card" key={title}>
-              <div className="featured-card-image"><img src={image} alt={title} /></div>
-              <div className="featured-card-body">
-                <h3>{title}</h3>
-                <p>{description}</p>
-                <Link to="/services">Learn more <ArrowRight size={15} /></Link>
-              </div>
-            </article>
-          ))}
-        </div>
-      </section>
-
       {/* STATS STRIP */}
       <section className="stats-strip">
         <div className="stats-strip-inner">

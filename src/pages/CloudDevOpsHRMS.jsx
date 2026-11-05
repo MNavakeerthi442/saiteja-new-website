@@ -40,9 +40,6 @@ export default function CloudDevOpsHRMS() {
 
       <section className="service-detail-hero">
 
-        <div className="section-label">
-          OUR SERVICES / CLOUD, DEVOPS & HRMS
-        </div>
 
         <h1>Cloud, DevOps & HRMS Solutions</h1>
 
